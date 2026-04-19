@@ -32,8 +32,6 @@ const Booking = sequelize.define('Booking', {
   tableName: 'bookings',
   timestamps: true,
 });
-
-// One-to-Many relationship
 Resource.hasMany(Booking, { foreignKey: 'resource_id' });
 Booking.belongsTo(Resource, { foreignKey: 'resource_id' });
 
