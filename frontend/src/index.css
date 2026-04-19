@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(79, 202, 117, 0.22), transparent 38%),
+      radial-gradient(circle at 88% 8%, rgba(46, 169, 90, 0.18), transparent 42%),
+      linear-gradient(150deg, #05190f 0%, #0b2a1a 48%, #103720 100%);
+    color: #e6f5ea;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-space-950/50 border border-space-200/10 rounded-2xl backdrop-blur-sm shadow-[0_8px_40px_rgba(5,28,16,0.45)];
+  }
+
+  .btn-primary {
+    @apply bg-space-500 hover:bg-space-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_10px_26px_rgba(46,169,90,0.28)];
+  }
+
+  .btn-danger {
+    @apply bg-red-500/20 hover:bg-red-500/40 text-red-300 border border-red-500/30 font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+  }
+
+  .input {
+    @apply w-full bg-space-950/70 border border-space-200/15 rounded-xl px-4 py-2.5 text-space-50 placeholder-space-200/45 focus:outline-none focus:border-space-400 focus:ring-1 focus:ring-space-400/50 transition-all;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* Subtle animated background */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(132,222,159,0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132,222,159,0.09) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 44px rgba(79, 202, 117, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(79, 202, 117, 0.45); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
