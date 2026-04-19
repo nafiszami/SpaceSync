@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-
+// management the resources file
 const Resource = sequelize.define('Resource', {
   id: {
     type: DataTypes.INTEGER,
